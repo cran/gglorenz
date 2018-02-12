@@ -1,0 +1,16 @@
+935bac6035d3a7180e3b271ac72329c3 *DESCRIPTION
+cbc423c8602daeb17a031aa11de84374 *LICENSE
+ef67614d4a3d30d7a419140e8e2a13d7 *NAMESPACE
+e99cf64dddacd039b7b0ad4f0226f8dc *NEWS.md
+e39b4f7f3bbc0ef271c15e16e9f2606f *R/data.R
+ce0807e25999006c1ae44a227aebae1d *R/gglorenz-package.r
+fd534fdfebad684ad30c3d757fb61841 *R/stat_lorenz.R
+9f2db2ce37b5593dfa4b100406a0d1bc *R/stat_lorenz_generalized.R
+654ad80919139bdc26075ca53a77a0ed *README.md
+0d9daf2cb57eccb1f6d06ed3a4d7d763 *data/billionaires.rda
+c9e7680be8d2657c1a4c4b6ed7ab1978 *man/billionaires.Rd
+682b1bc6788b43b4ac3f2890a4563dea *man/figures/README-unnamed-chunk-1-1.png
+e69f43fee5a31bc09bdd5ec2c7fce1ab *man/figures/README-unnamed-chunk-1-2.png
+ee5b909c2fd01fda6649aa6aa6d0a39f *man/gglorenz-package.Rd
+377ca78a19e764c5995aca4b8d148b2f *man/stat_lorenz.Rd
+63db23f9c8dd4a1a7f9aae3fe6686fc3 *man/stat_lorenz_generalized.Rd
