@@ -6,8 +6,8 @@
 #' @md
 #' @inheritParams ggplot2::geom_path
 #' @param geom which geom to use; defaults to "`path`".
-#' @param desc If FALSE, the default, population is arranged in a ascending
-#'   order along the x-axis. If TRUE, population is arranged in a descending
+#' @param desc If FALSE, the default, the population is arranged in ascending
+#'   order along the x-axis. If TRUE, the population is arranged in descending
 #'   order.
 #' @references
 #'   [Lorenz curve from Wikipedia](https://en.wikipedia.org/wiki/Lorenz_curve)
@@ -24,6 +24,7 @@
 #'     coord_fixed() +
 #'     geom_abline(linetype = "dashed") +
 #'     theme_minimal()
+#'
 stat_lorenz <- function(mapping = NULL, data = NULL,
                         geom = "path", position = "identity",
                         ...,
@@ -62,7 +63,16 @@ StatLorenz <- ggproto("StatLorenz", Stat,
                                    non-negative elements.", call. = FALSE)
                           }
 
-                          Lc <- ineq::Lc(data$x)
+                          if (any(names(data) == 'n') & any(data$n < 0)) {
+                              stop("stat_lorenz() requires a vector containing
+                                   non-negative frequencies", call. = FALSE)
+                          }
+
+                          if (any(names(data) == 'n')) {
+                              Lc <- ineq::Lc(data$x, data$n)
+                          } else {
+                              Lc <- ineq::Lc(data$x)
+                          }
 
                           if (desc) {
                               data.frame(x = 1 - Lc$p,
